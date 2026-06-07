@@ -1,0 +1,14 @@
+{
+  "buildCommand": "cd react-app && npm install && npm run build",
+  "outputDirectory": "react-app/dist",
+  "installCommand": "cd backend && npm install && cd ../react-app && npm install",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "backend/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

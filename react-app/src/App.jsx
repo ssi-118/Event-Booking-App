@@ -5,7 +5,7 @@ import EventList from './components/EventList';
 import EventModal from './components/EventModal';
 import './App.css';
 
-const API_URL = 'http://localhost:5000/api/events';
+const API_URL = import.meta.env.VITE_API_URL || '/api/events';
 
 function App() {
   const [events, setEvents] = useState([]);
