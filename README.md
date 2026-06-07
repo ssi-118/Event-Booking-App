@@ -137,8 +137,3 @@ npx vercel --prod   # production
 
 - `npm run dev` — start API with nodemon
 - `npm start` — start API (production)
-
-## Live Demo
-```
-https://event-booking-app-rose-rho.vercel.app/
-```
