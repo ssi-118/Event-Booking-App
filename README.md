@@ -13,12 +13,10 @@ A full-stack event scheduling application with a monthly calendar view, event li
 
 ## Tech Stack
 
-| Layer    | Technologies                          |
-| -------- | ------------------------------------- |
-| Frontend | React 19, Vite, Lucide React          |
-| Backend  | Node.js, Express, Mongoose            |
-| Database | MongoDB (Atlas for production)        |
-| Hosting  | Vercel (static frontend + serverless API) |
+- **Frontend** — React 19, Vite, Lucide React
+- **Backend** — Node.js, Express, Mongoose
+- **Database** — MongoDB (Atlas for production)
+- **Hosting** — Vercel (static frontend + serverless API)
 
 ## Project Structure
 
@@ -82,24 +80,20 @@ The app runs at `http://localhost:5173`. Vite proxies `/api` requests to the bac
 
 ## API Endpoints
 
-| Method | Endpoint            | Description    |
-| ------ | ------------------- | -------------- |
-| GET    | `/api/events`       | List all events |
-| POST   | `/api/events`       | Create an event |
-| PUT    | `/api/events/:id`   | Update an event |
-| DELETE | `/api/events/:id`   | Delete an event |
+- `GET /api/events` — list all events
+- `POST /api/events` — create an event
+- `PUT /api/events/:id` — update an event
+- `DELETE /api/events/:id` — delete an event
 
 ### Event fields
 
-| Field       | Required | Description                          |
-| ----------- | -------- | ------------------------------------ |
-| title       | Yes      | Event name                           |
-| startDate   | Yes      | ISO date string                      |
-| endDate     | Yes      | ISO date string (must be after start) |
-| description | No       | Event details                        |
-| category    | No       | work, personal, meeting, holiday, urgent, general |
-| location    | No       | Event location                       |
-| color       | No       | Hex color for calendar display       |
+- `title` (required) — event name
+- `startDate` (required) — ISO date string
+- `endDate` (required) — ISO date string, must be after start date
+- `description` — event details
+- `category` — work, personal, meeting, holiday, urgent, or general
+- `location` — event location
+- `color` — hex color for calendar display
 
 ## Deployment (Vercel)
 
@@ -109,9 +103,7 @@ The project is configured for Vercel with the React app served as static files a
 
 Add the following in the [Vercel project settings](https://vercel.com) (or via CLI):
 
-| Variable   | Environments              | Description                    |
-| ---------- | ------------------------- | ------------------------------ |
-| `MONGO_URI` | Production, Preview, Development | MongoDB Atlas connection string |
+- `MONGO_URI` — MongoDB Atlas connection string (set for Production, Preview, and Development)
 
 ```bash
 npx vercel env add MONGO_URI
@@ -136,9 +128,12 @@ npx vercel --prod   # production
 
 ## Scripts
 
-| Command              | Location    | Description              |
-| -------------------- | ----------- | ------------------------ |
-| `npm run dev`        | `react-app` | Start Vite dev server    |
-| `npm run build`      | `react-app` | Production build         |
-| `npm run dev`        | `backend`   | Start API with nodemon   |
-| `npm start`          | `backend`   | Start API (production)   |
+**react-app**
+
+- `npm run dev` — start Vite dev server
+- `npm run build` — production build
+
+**backend**
+
+- `npm run dev` — start API with nodemon
+- `npm start` — start API (production)
